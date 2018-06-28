@@ -50,8 +50,12 @@ public class Tour {
 	
 	public void neighboar() {
 		Random random = new Random();
-		int i = random.nextInt(size());
-		int j = random.nextInt(size());
+		int i, j;
+		do {
+			i = random.nextInt(size());
+			j = random.nextInt(size());
+		}
+		while(i == j);
 		City iCity = cities.get(i);
 		City jCity = cities.get(j);
 		cities.set(i,jCity);
